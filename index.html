@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--
+       Licensed to the Apache Software Foundation (ASF) under one
+       or more contributor license agreements.  See the NOTICE file
+       distributed with this work for additional information
+       regarding copyright ownership.  The ASF licenses this file
+       to you under the Apache License, Version 2.0 (the
+       "License"); you may not use this file except in compliance
+       with the License.  You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+       Unless required by applicable law or agreed to in writing,
+       software distributed under the License is distributed on an
+       "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+       KIND, either express or implied.  See the License for the
+       specific language governing permissions and limitations
+       under the License.
+-->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Hello World</title>
+        <script type="text/javascript" src="cordova-2.5.0.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            function loadXMLDoc() {
+                var xmlhttp;
+                var txt, x, i;
+                if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+                }
+                else {// code for IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function () {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        xmlDoc = xmlhttp.responseXML;
+                        txt = "";
+                        x = xmlDoc.getElementsByTagName("displayName");
+                        for (i = 0; i < x.length; i++) {
+                            txt = txt + x[i].childNodes[0].nodeValue + "<br>";
+                        }
+                        document.getElementById("myDiv").innerHTML = txt;
+                    }
+                }
+                xmlhttp.open("GET", "http://10.10.1.63:8080/catie/services/Menu/viewMainMenu?roomNumber=101&ipaddress=10.10.1.63", true);
+                xmlhttp.send();
+
+            }
+            function loadiconDoc() {
+                var xmlhttp;
+                var txt, x, i;
+                if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+                }
+                else {// code for IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function () {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        xmlDoc = xmlhttp.responseXML;
+                        txt = "";
+                        x = xmlDoc.getElementsByTagName("menuId");
+                        for (i = 0; i < x.length; i++) {
+                            txt = txt + x[i].childNodes[0].nodeValue + "<br>";
+                        }
+                        document.getElementById("myDiv").innerHTML = txt;
+                    }
+                }
+                xmlhttp.open("GET", "http://10.10.1.63:8080/catie/services/Menu/viewMainMenu?roomNumber=101&ipaddress=10.10.1.63", true);
+                xmlhttp.send();
+
+            }
+            function loadgreenDoc() {
+                var xmlhttp;
+                var txt, x, i;
+                if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+                }
+                else {// code for IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function () {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        xmlDoc = xmlhttp.responseXML;
+                        txt = "";
+                        x = xmlDoc.getElementsByTagName("refName");
+                        for (i = 0; i < x.length; i++) {
+                            txt = txt + x[i].childNodes[0].nodeValue + "<br>";
+                        }
+                        document.getElementById("myDiv").innerHTML = txt;
+                    }
+                }
+                xmlhttp.open("GET", "http://10.10.1.63:8080/catie/services/Menu/viewMainMenu?roomNumber=101&ipaddress=10.10.1.63", true);
+                xmlhttp.send();
+
+            }
+            function loaddocdining() {
+                var xmlhttp;
+                var txt, x, i;
+                if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+                }
+                else {// code for IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function () {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        xmlDoc = xmlhttp.responseXML;
+                        txt = "";
+                        x = xmlDoc.getElementsByTagName("sponsorType");
+                        for (i = 0; i < x.length; i++) {
+                            txt = txt + x[i].childNodes[0].nodeValue + "<br>";
+                        }
+                        document.getElementById("myDiv").innerHTML = txt;
+                    }
+                }
+                xmlhttp.open("GET", "http://10.10.1.63:8080/catie/services/Menu/viewMainMenu?roomNumber=101&ipaddress=10.10.1.63", true);
+                xmlhttp.send();
+
+            }
+                 
+        </script>
+            <style type="text/css">
+           #Button2 {
+                width: 108px;
+                height: 25px;
+            }
+            #Button3 {
+                width: 119px;
+                height: 24px;
+            }
+            #Button4 {
+                width: 113px;
+                height: 26px;
+            }
+            #Button1 {
+                width: 125px;
+                height: 25px;
+                margin-left: 0px;
+            }
+            </style>
+      
+    </head>
+    <body>
+      <h2>CATIE</h2>
+        <input id="Button4" type="button" onclick="loadXMLDoc()" value="videogallery" aria-checked="false" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id="Button1" type="button"onclick="loadiconDoc()" value="photogallery" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <br />
+        <br />
+        <input id="Button2" type="button" onclick="loadgreenDoc()" value="Greenpage" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<input id="Button3" type="button" onclick="    loaddocdining()" value="Dinningservice" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <br />
+        <br/>
+        
+<div id="myDiv"></div>
+        
+    </body>
+</html>
